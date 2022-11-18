@@ -18,10 +18,11 @@ from django.urls import path
 
 # importar proyecto
 
-from web.views import Home,Medicos
+from web.views import Home,MedicosVista,PacienteVista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home,name='home'),
-    path('medicos/', Medicos,name='medicos')
+    path('medicos/', MedicosVista,name='medicos'),
+    path('pacientes/', PacienteVista,name='pacientes')
 ]
