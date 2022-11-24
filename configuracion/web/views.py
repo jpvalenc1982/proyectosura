@@ -6,8 +6,6 @@ from web.formularios.formularioPaciente import FormularioPaciente
 from web.models import Medicos
 from web.models import Pacientes
 
-
-
 # Create your views here.
 # Quier que python cuando lea la función Home me cargue el index
 # Renderizar es PINTAR
@@ -18,11 +16,17 @@ def Home(request):
 
 
 def MedicosVista(request):
+
+    #Creamos una variable para controlar la ejecución de la alerta
+
+    lanzandoAlerta = False
+
     # Debo utilizar la clase formularioMedico
     # Creamos entonces un objeto
     formulario = FormularioMedico()
     diccionario = {
-        "formulario": formulario
+        "formulario": formulario,
+        "bandera":lanzandoAlerta
     }
 
     # Activar la recepción de datos
@@ -46,7 +50,8 @@ def MedicosVista(request):
                 sede=datos["sede"],
             )
             medicoNuevo.save()
-            print("exito en la operación")
+            diccionario["bandera"]=True
+            #print("exito en la operación")
 
     return render(request, 'vistaprueba.html', diccionario)
 
