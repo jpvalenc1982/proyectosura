@@ -15,6 +15,30 @@ def Home(request):
     return render(request, 'index.html')
 
 
+def consultorioMedico(request):
+    medicosConsultados=Medicos.objects.all()
+
+
+    datosMedicos={
+        "medicos":medicosConsultados
+
+    }
+    
+    return render(request, 'consultoriomedico.html',datosMedicos)
+
+
+def consultorioPaciente(request):
+    pacientesConsultados=Pacientes.objects.all()
+
+
+    datosPacientes={
+        "pacientes":pacientesConsultados
+
+    }
+    
+    return render(request,'consultoriopaciente.html',datosPacientes)
+
+
 def MedicosVista(request):
 
     #Creamos una variable para controlar la ejecución de la alerta
@@ -58,9 +82,11 @@ def MedicosVista(request):
 def PacienteVista(request):
     # Debo utilizar la clase formularioMedico
     # Creamos entonces un objeto
+    lanzandoAlertaP = False
     formularioP = FormularioPaciente()
     diccionarioP = {
-        "formularioP": formularioP
+        "formularioP": formularioP,
+        "banderaP":lanzandoAlertaP
     }
 
     # Activar la recepción de datos
@@ -84,6 +110,7 @@ def PacienteVista(request):
                 correo=datos["correo"],
             )
             pacienteNuevo.save()
-            print("exito en la operación")
+            diccionarioP["banderaP"]=True
+            #print("exito en la operación")
 
     return render(request, 'pacientes.html', diccionarioP)
