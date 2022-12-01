@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2022 a las 22:33:04
+-- Tiempo de generación: 02-12-2022 a las 00:33:06
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -249,7 +249,9 @@ INSERT INTO `medicos` (`id`, `nombre`, `apellido`, `cedula`, `tarjetaprofesional
 (3, 'Leonel', 'Messi', '12345657', 'singoles001', 1, 1, '231431454', 1),
 (4, 'Carlos', 'Ramirez', '8723923', 'AN76283', 2, 2, '3145627834', 2),
 (5, 'Carlos', 'Ramirez', '8723923', 'AN76283', 2, 2, '3145627834', 2),
-(6, 'JU', 'va', '32434', 'ae4543', 1, 1, '34134', 1);
+(6, 'JU', 'va', '32434', 'ae4543', 1, 1, '34134', 1),
+(7, 'Carlo', 'Gutierrez', '1234892340', 'An782324', 4, 1, '3124526372', 2),
+(8, 'Carlos', 'Cifuentes', '437987289', 'AN89243709', 1, 1, '31326535635', 2);
 
 -- --------------------------------------------------------
 
@@ -274,7 +276,14 @@ CREATE TABLE `pacientes` (
 --
 
 INSERT INTO `pacientes` (`id`, `nombre`, `apellido`, `cedula`, `regimen`, `grupoingreso`, `cuotaModeradora`, `contacto`, `correo`) VALUES
-(1, 'J', 'V', '3', 1, 1, 34, '455', 'fg@gmail.com');
+(1, 'J', 'V', '3', 1, 1, 34, '455', 'fg@gmail.com'),
+(2, 'Angie', 'Montoya', '2736392', 1, 3, 36500, '3214342312', 'angiemontoya@gmail.com'),
+(3, 'David', 'Nieto', '236428', 1, 2, 23400, '312574484', 'nieto@gmail.com'),
+(4, 'David', 'Alvarez', '37429814', 2, 1, 3000, '3124563489', 'ja@gmail.com'),
+(5, 'David', 'Alvarez', '37429814', 2, 1, 3000, '3124563489', 'ja@gmail.com'),
+(6, 'Erika', 'Valdez', '324252', 1, 1, 32099, '32432432', 'qww@gmail.com'),
+(7, 'U', 'Ramirez', '14324', 1, 1, 33450, '3141324324', 'fasd@gmail.com'),
+(8, 'Juan', 'David', '1313413', 1, 1, 45434, '341243124132', 'adfasdf@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -427,13 +436,13 @@ ALTER TABLE `django_migrations`
 -- AUTO_INCREMENT de la tabla `medicos`
 --
 ALTER TABLE `medicos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
